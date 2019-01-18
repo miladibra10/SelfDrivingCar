@@ -32,6 +32,10 @@
 .idea/
 .idea/**
 
+# Data files
+data/
+data/**
+
 # Generated files
 .idea/**/contentModel.xml
 
