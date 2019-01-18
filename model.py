@@ -8,7 +8,7 @@ from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 
 from utils import batch_generator
-from .settings import INPUT_SHAPE
+from settings import INPUT_SHAPE
 
 
 def load_data(args):
@@ -78,8 +78,8 @@ if __name__ == '__main__':
     parser.add_argument('-n', help='Epochs number', dest='nb_epoch', type=int, default=10)
     parser.add_argument('-s', help='Samples per Epoch', dest='samples_per_epoch', type=int, default=20000)
     parser.add_argument('-b', help='Batch size', dest='batch_size', type=int, default=40)
-    parser.add_argument('-o', help='Save best models only', dest='save_best_only', type=bool, default=True)
-    parser.add_argument('-l', help='Learning rate', dest='learning_rate', type=float, default=1**-4)
+    parser.add_argument('-o', help='Save best models only', dest='save_best_only', type=boolean_arg_getter, default='True')
+    parser.add_argument('-l', help='Learning rate', dest='learning_rate', type=float, default=1e-4)
     args = parser.parse_args()
 
     data = load_data(args)
